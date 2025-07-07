@@ -1,0 +1,22 @@
+@layer gap {
+    .gap-1  { gap: 0.1rem; }
+    .gap-2  { gap: 0.2rem; }
+    .gap-3  { gap: 0.3rem; }
+    .gap-4  { gap: 0.4rem; }
+    .gap-5  { gap: 0.5rem; }
+    .gap-6  { gap: 0.6rem; }
+    .gap-7  { gap: 0.7rem; }
+    .gap-8  { gap: 0.8rem; }
+    .gap-9  { gap: 0.9rem; }
+    .gap-10 { gap: 1.0rem; }
+    .gap-11 { gap: 1.1rem; }
+    .gap-12 { gap: 1.2rem; }
+    .gap-13 { gap: 1.3rem; }
+    .gap-14 { gap: 1.4rem; }
+    .gap-15 { gap: 1.5rem; }
+    .gap-16 { gap: 1.6rem; }
+    .gap-17 { gap: 1.7rem; }
+    .gap-18 { gap: 1.8rem; }
+    .gap-19 { gap: 1.9rem; }
+    .gap-20 { gap: 2.0rem; }
+}

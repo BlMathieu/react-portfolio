@@ -1,0 +1,7 @@
+@layer component {
+    .presentation-content {
+        font-size: 40px;
+        font-weight: 700;
+        letter-spacing: 0.4px;
+    }
+}

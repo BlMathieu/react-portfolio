@@ -1,0 +1,14 @@
+@import url('./reset.css');
+@import url('./base.css');
+@import url('./utility.css');
+@import url('./color.css');
+@import url('./padding.css');
+@import url('./margin.css');
+@import url('./gap.css');
+@import url('./position.css');
+@import url('./animation.css');
+
+@font-face {
+  font-family: octosquare;
+  src: url(../fonts/octosquare.ttf);
+}

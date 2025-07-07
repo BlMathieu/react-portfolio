@@ -1,0 +1,17 @@
+
+@layer reset {
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: octosquare;
+    }
+
+    body{
+        font-size: 20px;
+    }
+
+    a, a:hover, a:focus, a:active{
+        color: inherit;
+    }
+}

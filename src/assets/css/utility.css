@@ -1,0 +1,87 @@
+@layer utility {
+    .flex {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .flex-1 {
+        flex: 1;
+    }
+
+    .column {
+        flex-direction: column;
+    }
+
+    .wrap {
+        flex-wrap: wrap;
+    }
+
+    .jc-center {
+        justify-content: center;
+    }
+
+    .jc-evenly {
+        justify-content: space-evenly;
+    }
+
+    .jc-between {
+        justify-content: space-between;
+    }
+
+    .ai-center {
+        align-items: center;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    .card {
+        background-color: var(--bg-transparency-color);
+        border: solid 1px var(--transparency-color);
+        border-radius: 0.4rem;
+    }
+
+    .pf-menu {
+        background-color: rgba(255, 255, 255, 0.144);
+        border-radius: 0.2rem;
+        border: 1px solid rgb(255, 255, 255);
+    }
+
+    .logo {
+        display: inline-block;
+        width: 1.5rem;
+        height: 1.5rem;
+        background-color: red;
+
+        & img {
+            width: 1.5rem;
+            height: 1.5rem;
+            background-color: white;
+        }
+    }
+
+    .w-full {
+        width: 100%;
+    }
+
+    .h-parallax {
+        height: 100vh;
+    }
+
+    .h-full {
+        height: 100%;
+    }
+
+    .overflow-y {
+        overflow-y: auto;
+    }
+
+    .pointer {
+        cursor: pointer;
+    }
+
+    .word-wrap {
+        word-wrap: anywhere;
+    }
+}
