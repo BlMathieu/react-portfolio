@@ -2,14 +2,13 @@
     .project-item {
         display: flex;
         flex-direction: column;
-        
+
         width: 600px;
-        height:300px;
         gap: 1.4rem;
         padding: 2rem;
 
         font-size: 15px;
-        
+
         background-color: var(--bg-transparency-color);
         border: solid 1px var(--transparency-color);
         border-radius: 0.4rem;
@@ -27,19 +26,7 @@
         justify-content: center;
         align-content: center;
         gap: 0.4rem;
-
-        & div {
-            border-radius: 0.4rem;
-            background-color: var(--transparency-color);
-            padding: 0.2rem;
-            display: flex;
-            justify-items: center;
-        }
-
-        & img {
-            width: 35px;
-            height: 35px;
-        }
     }
+
 
 }

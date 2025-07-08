@@ -17,8 +17,8 @@ function AnimatedStars() {
     <Stars
       ref={starsRef}
       radius={100}
-      depth={50}
-      count={5000}
+      depth={25}
+      count={10000}
       factor={4}
       fade
       speed={1}

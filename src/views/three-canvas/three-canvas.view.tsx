@@ -5,6 +5,7 @@ import { BlendFunction } from "postprocessing";
 import "./three-canvas.css";
 import { useEffect, useState } from "react";
 import { AnimatedStars } from "./animated-stars";
+import { AnimatedSphere } from "./animated-sphere";
 
 function ThreeCanvasView() {
   const [size, setSize] = useState({
@@ -26,29 +27,20 @@ function ThreeCanvasView() {
       camera={{ position: [0, 0, 5], fov: 75 }}
     >
       <color attach="background" args={["#000000"]} />
-      <AnimatedStars />
-      {/* Une sphère lumineuse au centre */}
-      <mesh>
-        <sphereGeometry args={[1, 64, 64]} />
-        <meshStandardMaterial
-          emissive="#ff00ff"
-          emissiveIntensity={3}
-          color="#000000"
-        />
-      </mesh>
 
-      {/* Lumière */}
-      <ambientLight intensity={0.4} />
+      <AnimatedStars />
+
+      <AnimatedSphere />
+
+      <ambientLight intensity={0.6} />
       <pointLight position={[0, 0, 3]} intensity={2} color="#ffffff" />
 
-      {/* Contrôle de la caméra */}
       <OrbitControls />
 
-      {/* Post-processing bloom */}
       <EffectComposer>
         <Bloom
-          intensity={1.5} // force de l’effet
-          luminanceThreshold={0.1} // seuil de déclenchement du bloom
+          intensity={1.5}
+          luminanceThreshold={0.1}
           luminanceSmoothing={0.9}
           blendFunction={BlendFunction.ADD}
         />

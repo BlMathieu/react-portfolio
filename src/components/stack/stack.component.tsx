@@ -1,4 +1,3 @@
-import "./stack.css";
 import { StackCardComponent } from "./stack-card/stack-card.component";
 
 import frontend from "../../assets/images/frontend.png";
@@ -47,22 +46,39 @@ function StackComponent() {
 
 function StackCards() {
   return (
-    <div className="stack-container">
+    <div className="flex column jc-center ai-center gap-8">
       <div className="flex wrap gap-8 jc-center">
         <StackCardComponent
           title="Frontend"
           card_image={frontend}
-          images={[typescript, vue, react]}
+          icons={[
+            { url: typescript, text: "Typescript" },
+            { url: vue, text: "VueJs" },
+            { url: react, text: "React" },
+          ]}
         />
         <StackCardComponent
           title="Backend"
           card_image={backend}
-          images={[nodejs, nestjs, symfony, sql, mongodb, cassandra]}
+          icons={[
+            { url: nodejs, text: "NodeJs" },
+            { url: nestjs, text: "NestJs" },
+            { url: symfony, text: "Symfony" },
+            { url: sql, text: "Base de données relationnel" },
+            { url: mongodb, text: "MongoDB" },
+            { url: cassandra, text: "CassandraDB" },
+          ]}
         />
         <StackCardComponent
           title="Langages"
           card_image={langages}
-          images={[typescript, java, php, cpp, python]}
+          icons={[
+            { url: typescript, text: "Typescript" },
+            { url: java, text: "Java" },
+            { url: php, text: "PHP" },
+            { url: cpp, text: "C++" },
+            { url: python, text: "Python" },
+          ]}
         />
       </div>
 
@@ -70,12 +86,21 @@ function StackCards() {
         <StackCardComponent
           title="Outils"
           card_image={tools}
-          images={[github, docker]}
+          icons={[
+            { url: github, text: "GitHub" },
+            { url: docker, text: "Docker" },
+          ]}
         />
         <StackCardComponent
           title="Autres"
           card_image={other}
-          images={[nuxt, tauri, javafx, sfml, raylib]}
+          icons={[
+            { url: nuxt, text: "Nuxt" },
+            { url: tauri, text: "Tauri" },
+            { url: javafx, text: "JavaFX" },
+            { url: sfml, text: "SFML" },
+            { url: raylib, text: "Raylib" },
+          ]}
         />
       </div>
     </div>

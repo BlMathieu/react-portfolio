@@ -1,0 +1,30 @@
+@layer component {
+    .tooltip {
+        position: relative;
+    }
+
+    .tooltip .tooltip-text {
+        visibility: hidden;
+        position: absolute;
+        z-index: 1;
+
+        width: 120px;
+        padding: 5px 0;
+        border-radius: 6px;
+
+        background-color: var(--bg-transparency-color);
+
+        text-align: center;
+        color: #fff;
+        font-size: 14px;
+
+        bottom: 100%;
+        left: 50%;
+        margin-left: -60px;
+    }
+
+    .tooltip:hover .tooltip-text {
+        visibility: visible;
+    }
+
+}

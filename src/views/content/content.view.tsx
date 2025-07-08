@@ -1,3 +1,4 @@
+import { ContactComponent } from "../../components/contact/contact.component";
 import { PresentationComponent } from "../../components/presentation/presentation.component";
 import { ProfilComponent } from "../../components/profil/profil.component";
 import { ProjectComponent } from "../../components/project/project.component";
@@ -11,6 +12,7 @@ function ContentView() {
         <ProfilComponent />
         <StackComponent />
         <ProjectComponent />
+        <ContactComponent />
       </main>
     </div>
   );

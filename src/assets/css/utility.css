@@ -48,18 +48,6 @@
         border: 1px solid rgb(255, 255, 255);
     }
 
-    .logo {
-        display: inline-block;
-        width: 1.5rem;
-        height: 1.5rem;
-        background-color: red;
-
-        & img {
-            width: 1.5rem;
-            height: 1.5rem;
-            background-color: white;
-        }
-    }
 
     .w-full {
         width: 100%;
@@ -83,5 +71,22 @@
 
     .word-wrap {
         word-wrap: anywhere;
+    }
+
+    .underline {
+        text-decoration: underline;
+        text-underline-offset: 0.2rem;
+    }
+
+    .icon-container {
+        border-radius: 0.4rem;
+        background-color: var(--transparency-color);
+        padding: 0.2rem;
+        display: flex;
+
+        & img {
+            width: 35px;
+            height: 35px;
+        }
     }
 }
