@@ -3,6 +3,10 @@
          position: absolute;
      }
 
+     .relative {
+         position: relative;
+     }
+
      .fixed {
          position: fixed;
      }
@@ -15,11 +19,29 @@
          bottom: 0;
      }
 
+     /* Z-INDEX */
      .z-1 {
          z-index: 1;
      }
 
      .z-2 {
          z-index: 2;
+     }
+
+     /* CENTERING */
+     .jc-center {
+         justify-content: center;
+     }
+
+     .jc-evenly {
+         justify-content: space-evenly;
+     }
+
+     .jc-between {
+         justify-content: space-between;
+     }
+
+     .ai-center {
+         align-items: center;
      }
  }

@@ -32,7 +32,7 @@ function ThreeCanvasView() {
 
       <AnimatedSphere />
 
-      <ambientLight intensity={0.6} />
+      <ambientLight intensity={0.5} />
       <pointLight position={[0, 0, 3]} intensity={2} color="#ffffff" />
 
       <OrbitControls />

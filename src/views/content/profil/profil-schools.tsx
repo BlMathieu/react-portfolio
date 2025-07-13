@@ -33,7 +33,7 @@ const schools_list: I_School[] = [
 
 const schools = schools_list.map((s, index) => {
   return (
-    <div key={index} className="flex column card p-10">
+    <div key={index} className="flex column card p-10 gap-4">
       <p>
         <span className="underline">Diplome</span> : {s.diplome}
       </p>

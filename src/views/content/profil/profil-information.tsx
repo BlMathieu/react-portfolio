@@ -1,5 +1,5 @@
-import photo from "../../assets/images/photo.jpg";
-import { calculateYearsOld } from "../../utils/years-old.utils";
+import photo from "../../../assets/images/photo.jpg";
+import { calculateYearsOld } from "../../../utils/years-old.utils";
 
 function ProfilInformation() {
   const born = new Date("2003-01-09");
@@ -15,7 +15,7 @@ function ProfilInformation() {
         <img className="profil-image" src={photo} />
       </div>
 
-      <div className="flex column">
+      <div className="flex column gap-4">
         <p>
           <span className="underline">Nom</span> : Blanchet
         </p>

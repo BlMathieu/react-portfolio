@@ -1,8 +1,8 @@
-import type { I_Icon } from "../../../types/icon.type";
-import { TooltipComponent } from "../../tooltip/tooltip.component";
-import "./project-card.css";
+import type { I_Icon } from "../../types/icon.type";
+import { TooltipComponent } from "../tooltip/tooltip.component";
+import "./xl-card.css";
 
-type I_ProjectCardComponent = {
+type I_XLCardComponent = {
   title: string;
   project_image: string;
   icons: I_Icon[];
@@ -11,32 +11,41 @@ type I_ProjectCardComponent = {
   link?: string;
 };
 
-function ProjectCardComponent({
+function XLCardComponent({
   title,
   project_image,
   icons,
   informations,
   description,
   link,
-}: I_ProjectCardComponent) {
+}: I_XLCardComponent) {
   return (
-    <div className="project-item">
+    <div className="project-item appear-content p-8">
       <div className="flex gap-10">
-        <img className="project-img" src={project_image} alt="p-image" />
+        <img
+          className={`project-img ${link ? "scale-hover pointer" : ""}`}
+          src={project_image}
+          alt="p-image"
+          onClick={() => window.open(link,'_blank')} 
+        />
 
         <div className="flex column gap-16 word-wrap">
-          {/* PROJECT INFORMATIONS */}
+          {/* CARD INFORMATIONS */}
 
           <div>
             <h3>{title}</h3>
             <span>{description}</span>
           </div>
 
-          {/* PROJECT STACK IMAGES */}
+          {/* CARD ICONS */}
 
-          <div className="project-stack">
+          <div className="flex jc-center ai-center gap-4">
             {icons.map((icon, index) => (
-              <TooltipComponent key={index} className="icon-container" text={icon.text}>
+              <TooltipComponent
+                key={index}
+                className="icon-container"
+                text={icon.text}
+              >
                 <img src={icon.url} />
               </TooltipComponent>
             ))}
@@ -46,7 +55,7 @@ function ProjectCardComponent({
 
           {!!link && (
             <span>
-              <a target="_blank" href={link}>
+              <a className="link-hover" target="_blank" href={link}>
                 Lien
               </a>
             </span>
@@ -67,4 +76,4 @@ function ProjectCardComponent({
   );
 }
 
-export { ProjectCardComponent };
+export { XLCardComponent };

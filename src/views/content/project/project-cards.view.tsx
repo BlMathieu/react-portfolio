@@ -1,129 +1,49 @@
-import { useState, type ReactElement } from "react";
-import { ProjectCardComponent } from "./project-card/project-card.component";
-import { HiChevronLeft } from "react-icons/hi2";
-import { HiChevronRight } from "react-icons/hi2";
-import { GoDot } from "react-icons/go";
-import { GoDotFill } from "react-icons/go";
+import { XLCardComponent } from "../../../components/cards/xl-card.component";
+import keyguard from "../../../assets/images/projects/keyguard.png";
+import amb from "../../../assets/images/projects/amb.png";
 
-import keyguard from "../../assets/images/projects/keyguard.png";
-import amb from "../../assets/images/projects/amb.png";
+import brickbreaker from "../../../assets/images/projects/casse-brique.png";
+import cggames from "../../../assets/images/projects/cg-games.png";
+import prehispong from "../../../assets/images/projects/prehispong.png";
+import filemangager from "../../../assets/images/projects/filemanager.png";
 
-import brickbreaker from "../../assets/images/projects/casse-brique.png";
-import cggames from "../../assets/images/projects/cg-games.png";
-import prehispong from "../../assets/images/projects/prehispong.png";
-import filemangager from "../../assets/images/projects/filemanager.png";
+import vue from "../../../assets/images/technologies/vue.svg";
+import react from "../../../assets/images/technologies/react.svg";
+import typescript from "../../../assets/images/technologies/typescript.svg";
+import java from "../../../assets/images/technologies/java.svg";
+import javafx from "../../../assets/images/technologies/JavaFX.png";
+import nestjs from "../../../assets/images/technologies/nestjs.svg";
+import ionic from "../../../assets/images/technologies/ionic.png";
+import nuxt from "../../../assets/images/technologies/nuxt.svg";
+import php from "../../../assets/images/technologies/php.svg";
+import nodejs from "../../../assets/images/technologies/nodejs.svg";
+import langageR from "../../../assets/images/technologies/langageR.svg";
+import mariadb from "../../../assets/images/technologies/mariadb.svg";
+import oracle from "../../../assets/images/technologies/oracle.png";
+import postgres from "../../../assets/images/technologies/postgres.png";
+import cassandra from "../../../assets/images/technologies/cassandra.svg";
 
-import vue from "../../assets/images/technologies/vue.svg";
-import react from "../../assets/images/technologies/react.svg";
-import typescript from "../../assets/images/technologies/typescript.svg";
-import java from "../../assets/images/technologies/java.svg";
-import javafx from "../../assets/images/technologies/JavaFX.png";
-import nestjs from "../../assets/images/technologies/nestjs.svg";
-import ionic from "../../assets/images/technologies/ionic.png";
-import nuxt from "../../assets/images/technologies/nuxt.svg";
-import php from "../../assets/images/technologies/php.svg";
-import nodejs from "../../assets/images/technologies/nodejs.svg";
-import langageR from "../../assets/images/technologies/langageR.svg";
-import mariadb from "../../assets/images/technologies/mariadb.svg";
-import oracle from "../../assets/images/technologies/oracle.png";
-import postgres from "../../assets/images/technologies/postgres.png";
-import cassandra from "../../assets/images/technologies/cassandra.svg";
+import diagbiosis from "../../../assets/images/projects/diagbiosis.png";
+import datadiag from "../../../assets/images/projects/datadiag.png";
 
-import diagbiosis from "../../assets/images/projects/diagbiosis.png";
-import datadiag from "../../assets/images/projects/datadiag.png";
-
-// TYPES
-
-type I_Project = "Scolaire" | "Personnel" | "Professionnel";
 type I_ProjectCards = {
   project_type: string;
 };
 
-// CONSTANTES
-
-const types: I_Project[] = ["Personnel", "Professionnel", "Scolaire"];
-
-// DOM
-
-function ProjectComponent() {
-  // REACT STATES
-  const [project_type, setProjectType] = useState<I_Project>("Personnel");
-
-  // DOTS
-  const dots = types.map((_i, index) => {
-    const selected_idx = types.findIndex((t) => t === project_type);
-    if (index === selected_idx) return <GoDotFill size={25} key={index} />;
-    return (
-      <GoDot
-        onClick={() => setProjectType(types[index])}
-        key={index}
-        className="pointer"
-        size={25}
-      />
-    );
-  });
-
-  // FUNCTIONS
-  function nextProjectType() {
-    const idx_actual_type = types.findIndex((s) => s === project_type);
-
-    const is_idx_valid =
-      idx_actual_type >= 0 && idx_actual_type + 1 < types.length;
-    const new_idx_type = is_idx_valid ? idx_actual_type + 1 : 0;
-
-    setProjectType(types[new_idx_type]);
-  }
-
-  function beforeProjectType() {
-    const idx_actual_type = types.findIndex((s) => s === project_type);
-
-    const is_idx_valid = idx_actual_type - 1 >= 0;
-    const new_idx_type = is_idx_valid ? idx_actual_type - 1 : types.length - 1;
-
-    setProjectType(types[new_idx_type]);
-  }
-
+function ProjectCardsView({ project_type }: I_ProjectCards) {
   return (
-    <section id="projects">
-      <div className="flex jc-center ai-center">
-        <div>
-          <HiChevronLeft
-            className="pointer"
-            onClick={beforeProjectType}
-            size={40}
-          />
-        </div>
-
-        <ProjectCards project_type={project_type} />
-
-        <div>
-          <HiChevronRight
-            className="pointer"
-            onClick={nextProjectType}
-            size={40}
-          />
-        </div>
-      </div>
-
-      <div className="text-center">{dots}</div>
-    </section>
-  );
-}
-
-function ProjectCards({ project_type }: I_ProjectCards): ReactElement {
-  return (
-    <div className="flex column gap-8 text-center">
+    <div className="project-container flex gap-8 column text-center">
       <h3>Mes projets : {project_type}</h3>
-
       <div className="flex jc-center gap-8 wrap">
         {project_type === "Personnel" && (
           <>
-            <ProjectCardComponent
+            <XLCardComponent
               title={"Keyguard"}
               project_image={keyguard}
               icons={[
-                { url: typescript, text: "Typescript" },
                 { url: react, text: "React" },
+                { url: typescript, text: "Typescript" },
+                { url: nestjs, text: "NestJs" },
                 { url: postgres, text: "Postgres" },
               ]}
               description={"Gestionnaire de mots de passe"}
@@ -136,11 +56,12 @@ function ProjectCards({ project_type }: I_ProjectCards): ReactElement {
                 "Déploiement sur mon VPS avec Docker",
               ]}
             />
-            <ProjectCardComponent
+            <XLCardComponent
               title={"AdlessMusicBroadcast"}
               project_image={amb}
               icons={[
                 { url: ionic, text: "Ionic" },
+                { url: typescript, text: "Typescript" },
                 { url: vue, text: "VueJs" },
                 { url: nestjs, text: "NestJs" },
               ]}
@@ -153,7 +74,7 @@ function ProjectCards({ project_type }: I_ProjectCards): ReactElement {
               ]}
               link="https://mbvps.duckdns.org/amb/#/home"
             />
-            <ProjectCardComponent
+            <XLCardComponent
               title={"NuxtFileManager"}
               project_image={filemangager}
               icons={[{ url: nuxt, text: "Nuxt" }]}
@@ -173,7 +94,7 @@ function ProjectCards({ project_type }: I_ProjectCards): ReactElement {
 
         {project_type === "Professionnel" && (
           <>
-            <ProjectCardComponent
+            <XLCardComponent
               title={"DataDiag (Stage Diag2Tech)"}
               project_image={datadiag}
               icons={[
@@ -191,7 +112,7 @@ function ProjectCards({ project_type }: I_ProjectCards): ReactElement {
                 "Déploiement du logiciel sur le NAS de Diag2Tech",
               ]}
             />
-            <ProjectCardComponent
+            <XLCardComponent
               title={"Diagbiosis (Alternance Diag2Tech)"}
               project_image={diagbiosis}
               icons={[
@@ -223,7 +144,7 @@ function ProjectCards({ project_type }: I_ProjectCards): ReactElement {
         )}
         {project_type === "Scolaire" && (
           <>
-            <ProjectCardComponent
+            <XLCardComponent
               title="CG-Games"
               project_image={cggames}
               icons={[
@@ -243,7 +164,7 @@ function ProjectCards({ project_type }: I_ProjectCards): ReactElement {
               ]}
               link="https://github.com/SAE-IAMSI/cg-games-project"
             />
-            <ProjectCardComponent
+            <XLCardComponent
               title="Casse-Briques"
               project_image={brickbreaker}
               icons={[
@@ -260,7 +181,7 @@ function ProjectCards({ project_type }: I_ProjectCards): ReactElement {
               ]}
               link="https://github.com/BlMathieu/BrickBreaker/tree/master"
             />
-            <ProjectCardComponent
+            <XLCardComponent
               title="Prehispong"
               project_image={prehispong}
               icons={[
@@ -276,21 +197,6 @@ function ProjectCards({ project_type }: I_ProjectCards): ReactElement {
                 "Architecture MVC",
               ]}
             />
-            <ProjectCardComponent
-              title="MovieFinder"
-              project_image={""}
-              icons={[
-                { url: typescript, text: "Typescript" },
-                { url: nestjs, text: "NestJs" },
-              ]}
-              description={
-                "Projet de Bac+4, création d'un moteur de recherche de film"
-              }
-              informations={[
-                "Utilisation des API open weather et dbmovie",
-                "Géolocalisation de l'utilisateur",
-              ]}
-            />
           </>
         )}
       </div>
@@ -298,6 +204,4 @@ function ProjectCards({ project_type }: I_ProjectCards): ReactElement {
   );
 }
 
-// EXPORTS
-
-export { ProjectComponent };
+export { ProjectCardsView };

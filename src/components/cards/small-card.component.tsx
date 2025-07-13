@@ -1,34 +1,32 @@
-import type { I_Icon } from "../../../types/icon.type";
-import { TooltipComponent } from "../../tooltip/tooltip.component";
-import "./stack-card.css";
+import { TooltipComponent } from "../tooltip/tooltip.component";
+import type { I_Icon } from "../../types/icon.type";
+import "./small-card.css";
 
-type I_StackCardComponent = {
+type I_SmallCardComponent = {
   title: string;
   card_image: string;
   icons: I_Icon[];
 };
 
-function StackCardComponent({
+function SmallCardComponent({
   title,
   card_image,
   icons,
-}: I_StackCardComponent) {
+}: I_SmallCardComponent) {
   return (
-    <div className="stack-card">
-      {/* STACK INFORMATION */}
-
+    <div className="small-card p-16">
       <div className="flex gap-8">
         <div>
-          <img className="stack-img" src={card_image} alt="img-card" />
+          <img className="card-img" src={card_image} alt="icon" />
         </div>
         <div>
           <h3>{title}</h3>
         </div>
       </div>
 
-      {/* STACK IMAGES  */}
+      {/* CARD IMAGES  */}
 
-      <div className="stack-tech">
+      <div className="small-card-icons">
         {icons.map((icon, index) => (
           <TooltipComponent
             className="icon-container"
@@ -43,4 +41,4 @@ function StackCardComponent({
   );
 }
 
-export { StackCardComponent };
+export { SmallCardComponent };
