@@ -1,28 +1,24 @@
 @layer component {
-    .project-container {
-        width: 66%;
+  .project-item {
+    display: flex;
+    flex-direction: column;
 
-        & .project-item {
-            display: flex;
-            flex-direction: column;
+    max-width: 600px;
+    gap: 1.4rem;
 
-            max-width: 600px;
-            gap: 1.4rem;
+    font-size: 15px;
 
-            font-size: 15px;
+    background-color: var(--bg-transparency-color);
+    border: solid 1px var(--transparency-color);
+    border-radius: 0.4rem;
 
-            background-color: var(--bg-transparency-color);
-            border: solid 1px var(--transparency-color);
-            border-radius: 0.4rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
-            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-
-            .project-img {
-                width: 300px;
-                height: 200px;
-                border: 3px solid var(--transparency-color);
-                border-radius: 0.2rem;
-            }
-        }
+    .project-img {
+      width: 300px;
+      height: 200px;
+      border: 3px solid var(--transparency-color);
+      border-radius: 0.2rem;
     }
+  }
 }

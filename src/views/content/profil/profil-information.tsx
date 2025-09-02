@@ -26,7 +26,7 @@ function ProfilInformation() {
           <span className="underline">Age</span> : {years} ans
         </p>
         <p>
-          <span className="underline">Mobilité</span> : Occitanie
+          <span className="underline">Mobilité</span> : France
         </p>
       </div>
     </div>

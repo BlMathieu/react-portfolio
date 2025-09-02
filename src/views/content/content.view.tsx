@@ -2,10 +2,10 @@ import { useEffect, useRef } from "react";
 import { PresentationView } from "./presentation/presentation.view";
 
 import { SCROLLABLE_KEYS } from "../../types/scrollable.type";
-import { StackView } from "./stack/stack.view";
 import { ContactView } from "./contact/contact.component";
-import { ProjectView } from "./project/project.view";
 import { ProfilView } from "./profil/profil.view";
+import { ProjectView } from "./project/project.view";
+import { StackView } from "./stack/stack.view";
 
 function ContentView() {
   const container_ref = useRef<HTMLDivElement | null>(null);
@@ -18,10 +18,19 @@ function ContentView() {
   return (
     <main id="content-div" ref={container_ref} className="flex-1 overflow-y">
       <PresentationView className="flex column jc-center ai-center text-center appear h-parallax" />
-      <ProfilView id={"profil"} className="flex jc-center hidden h-parallax" />
-      <StackView id={"stack"} className="flex column jc-center ai-center hidden h-parallax gap-8"/>
-      <ProjectView id={"projects"} className="hidden h-parallax"/>
-      <ContactView id={"contact"} className="flex jc-center ai-center hidden h-parallax"/>
+      <ProfilView
+        id={"profil"}
+        className="flex jc-center hidden h-parallax p-10"
+      />
+      <StackView
+        id={"stack"}
+        className="flex column jc-center ai-center hidden h-parallax gap-8"
+      />
+      <ProjectView id={"projects"} className="hidden h-parallax p-10" />
+      <ContactView
+        id={"contact"}
+        className="flex jc-center ai-center hidden h-parallax"
+      />
     </main>
   );
 }

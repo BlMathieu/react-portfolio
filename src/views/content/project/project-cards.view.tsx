@@ -1,30 +1,30 @@
-import { XLCardComponent } from "../../../components/cards/xl-card.component";
-import keyguard from "../../../assets/images/projects/keyguard.png";
 import amb from "../../../assets/images/projects/amb.png";
+import keyguard from "../../../assets/images/projects/keyguard.png";
+import { XLCardComponent } from "../../../components/cards/xl-card.component";
 
 import brickbreaker from "../../../assets/images/projects/casse-brique.png";
 import cggames from "../../../assets/images/projects/cg-games.png";
-import prehispong from "../../../assets/images/projects/prehispong.png";
 import filemangager from "../../../assets/images/projects/filemanager.png";
+import prehispong from "../../../assets/images/projects/prehispong.png";
 
-import vue from "../../../assets/images/technologies/vue.svg";
-import react from "../../../assets/images/technologies/react.svg";
-import typescript from "../../../assets/images/technologies/typescript.svg";
+import cassandra from "../../../assets/images/technologies/cassandra.svg";
+import ionic from "../../../assets/images/technologies/ionic.png";
 import java from "../../../assets/images/technologies/java.svg";
 import javafx from "../../../assets/images/technologies/JavaFX.png";
-import nestjs from "../../../assets/images/technologies/nestjs.svg";
-import ionic from "../../../assets/images/technologies/ionic.png";
-import nuxt from "../../../assets/images/technologies/nuxt.svg";
-import php from "../../../assets/images/technologies/php.svg";
-import nodejs from "../../../assets/images/technologies/nodejs.svg";
 import langageR from "../../../assets/images/technologies/langageR.svg";
 import mariadb from "../../../assets/images/technologies/mariadb.svg";
+import nestjs from "../../../assets/images/technologies/nestjs.svg";
+import nodejs from "../../../assets/images/technologies/nodejs.svg";
+import nuxt from "../../../assets/images/technologies/nuxt.svg";
 import oracle from "../../../assets/images/technologies/oracle.png";
+import php from "../../../assets/images/technologies/php.svg";
 import postgres from "../../../assets/images/technologies/postgres.png";
-import cassandra from "../../../assets/images/technologies/cassandra.svg";
+import react from "../../../assets/images/technologies/react.svg";
+import typescript from "../../../assets/images/technologies/typescript.svg";
+import vue from "../../../assets/images/technologies/vue.svg";
 
-import diagbiosis from "../../../assets/images/projects/diagbiosis.png";
 import datadiag from "../../../assets/images/projects/datadiag.png";
+import diagbiosis from "../../../assets/images/projects/diagbiosis.png";
 
 type I_ProjectCards = {
   project_type: string;
@@ -32,7 +32,7 @@ type I_ProjectCards = {
 
 function ProjectCardsView({ project_type }: I_ProjectCards) {
   return (
-    <div className="project-container flex gap-8 column text-center">
+    <div className="flex gap-8 column text-center">
       <h3>Mes projets : {project_type}</h3>
       <div className="flex jc-center gap-8 wrap">
         {project_type === "Personnel" && (

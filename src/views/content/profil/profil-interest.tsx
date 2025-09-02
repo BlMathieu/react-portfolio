@@ -6,7 +6,7 @@ function ProfilInterest() {
   return (
     <div className="card p-10">
       <div className="text-center">
-        <h3>Mes centres d'intérêt</h3>
+        <h3>Mes centres d'intérêts</h3>
       </div>
 
       <div className="flex column gap-8 p-6">

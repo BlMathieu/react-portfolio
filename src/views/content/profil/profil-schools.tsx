@@ -1,5 +1,9 @@
 // TYPES
 
+import { CiBookmark, CiBookmarkCheck } from "react-icons/ci";
+import { FaCalendarAlt } from "react-icons/fa";
+import { GiDiploma } from "react-icons/gi";
+
 type I_SchoolStatus = "En cours" | "Obtenu";
 type I_School = {
   diplome: string;
@@ -34,13 +38,15 @@ const schools_list: I_School[] = [
 const schools = schools_list.map((s, index) => {
   return (
     <div key={index} className="flex column card p-10 gap-4">
-      <p>
-        <span className="underline">Diplome</span> : {s.diplome}
+      <p className="flex ai-center gap-4">
+        <GiDiploma /> <span className="underline">Diplome</span> : {s.diplome}
       </p>
-      <p>
+      <p className="flex ai-center gap-4">
+        <FaCalendarAlt />
         <span className="underline">Année</span> : {s.duration}
       </p>
-      <p>
+      <p className="flex ai-center gap-4">
+        <CiBookmark />
         <span className="underline">Statut</span> :{" "}
         <span className={s.status === "Obtenu" ? "green" : "orange"}>
           {s.status}
@@ -48,7 +54,8 @@ const schools = schools_list.map((s, index) => {
       </p>
 
       {!!s.mention && (
-        <p>
+        <p className="flex ai-center gap-4">
+          <CiBookmarkCheck />
           <span className="underline">Mention</span> : {s.mention}
         </p>
       )}
