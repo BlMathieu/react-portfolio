@@ -1,4 +1,4 @@
-import { FaLinkedin, FaGithub } from "react-icons/fa";
+import { FaGithub, FaGitlab, FaLinkedin } from "react-icons/fa";
 
 function FooterView() {
   return (
@@ -22,6 +22,14 @@ function FooterView() {
           href="https://github.com/BlMathieu"
         >
           <FaGithub size={30} />
+        </a>
+
+        <a
+          className="scale-hover"
+          target="_blank"
+          href="https://gitlab.com/blmathieu"
+        >
+          <FaGitlab fill="orange" size={30} />
         </a>
       </div>
     </footer>
